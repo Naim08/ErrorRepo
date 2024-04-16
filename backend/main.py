@@ -54,7 +54,8 @@ def read_root():
 
 @app.get("/error")
 async def trigger_error():
-    division_by_zero = 1 / 0
+    # division_by_zero = 1 / 0
+    return {"message": "No error triggered"}
 
 # Run the app with `uvicorn app:app --reload` and visit http://
 
