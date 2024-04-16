@@ -56,5 +56,8 @@ def read_root():
 async def trigger_error():
     division_by_zero = 1 / 0
 
-# Run the app with `uvicorn app:app --reload` and visit http://
+import uvicorn
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
 
