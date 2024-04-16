@@ -54,7 +54,11 @@ def read_root():
 
 @app.get("/error")
 async def trigger_error():
-    division_by_zero = 1 / 0
+    try:
+        division_by_zero = 1 / 0
+    except ZeroDivisionError:
+        division_by_zero = "undefined"
+    return {"result": division_by_zero}
 
 # Run the app with `uvicorn app:app --reload` and visit http://
 
