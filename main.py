@@ -54,7 +54,10 @@ def read_root():
 
 @app.get("/error")
 async def trigger_error():
-    division_by_zero = 1 / 0
+    try:
+        division_by_zero = 1 / 0
+    except Exception as e:
+        return {"error": f"An error occurred: {e}"}
 
 # Run the app with `uvicorn app:app --reload` and visit http://
 
